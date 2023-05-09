@@ -37,7 +37,7 @@ function serialize(root: Test): string {
 	return JSON.stringify(root);
 }
 
-type Data {
+type Data = {
 	val: any,
 	left: any,
 	right: any,
