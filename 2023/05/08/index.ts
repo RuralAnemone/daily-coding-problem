@@ -18,10 +18,7 @@
  * assert deserialize(serialize(node)).left.left.val == 'left.left'
  * ```
  */
-
-// I'm going to assume that val, left, and right are the only variables becauise I can't think of any other way to do this
-
-class Test {
+class Node {
 	private val: any;
 	private left: any;
 	private right: any;
@@ -32,6 +29,9 @@ class Test {
 		this.right = right;
 	}
 }
+
+
+// I'm going to assume that val, left, and right are the only variables becauise I can't think of any other good way to do this
 
 function serialize(root: Test): string {
 	return JSON.stringify(root);
