@@ -19,7 +19,7 @@
  * assert deserialize(serialize(node)).left.left.val == 'left.left'
  * ```
  */
-class Node {
+class NodeTest {
     constructor(val, left, right) {
         this.val = val;
         this.left = left;
@@ -32,6 +32,6 @@ function serialize(root) {
 }
 function deserialize(s) {
     const deserialized = JSON.parse(s);
-    return new Test(deserialized.val, deserialized.left, deserialized.right);
+    return new NodeTest(deserialized.val, deserialized.left, deserialized.right);
 }
-console.log(serialize(new Test("val", "left", "right")));
+console.log(serialize(new NodeTest("val", "left", "right")));

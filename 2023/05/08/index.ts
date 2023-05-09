@@ -18,7 +18,7 @@
  * assert deserialize(serialize(node)).left.left.val == 'left.left'
  * ```
  */
-class Node {
+class NodeTest {
 	private val: any;
 	private left: any;
 	private right: any;
@@ -33,7 +33,7 @@ class Node {
 
 // I'm going to assume that val, left, and right are the only variables becauise I can't think of any other good way to do this
 
-function serialize(root: Test): string {
+function serialize(root: NodeTest): string {
 	return JSON.stringify(root);
 }
 
@@ -43,9 +43,9 @@ type Data = {
 	right: any,
 }
 
-function deserialize(s: string): Test {
+function deserialize(s: string): NodeTest {
 	const deserialized: Data = JSON.parse(s);
-	return new Test(deserialized.val, deserialized.left, deserialized.right);
+	return new NodeTest(deserialized.val, deserialized.left, deserialized.right);
 }
 
-console.log(serialize(new Test("val", "left", "right")));
+console.log(serialize(new NodeTest("val", "left", "right")));
