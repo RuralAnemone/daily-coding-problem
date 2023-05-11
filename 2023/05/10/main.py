@@ -15,3 +15,15 @@ def cons(a, b):
 # with js you'd just use arrays
 # if I'm understanding the problem correctly
 # ugh idk
+
+def car(pair):
+    def first(a, b):
+        return a
+    return pair(first)
+
+def cdr(pair):
+    def last(a, b):
+        return b
+    return pair(last)
+
+# something like that
