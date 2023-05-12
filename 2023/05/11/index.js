@@ -11,6 +11,8 @@
  * nodes and memory addresses.
  */
 class XORLinkedList {
+    length;
+    stuff;
     constructor(...stuff) {
         this.length = stuff.length;
         this.stuff = stuff;

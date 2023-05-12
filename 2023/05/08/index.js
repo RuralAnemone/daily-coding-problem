@@ -20,6 +20,9 @@
  * ```
  */
 class NodeTest {
+    val;
+    left;
+    right;
     constructor(val, left, right) {
         this.val = val;
         this.left = left;
