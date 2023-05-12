@@ -1,5 +1,26 @@
 {
   "dependencies": {
+    "jest": "^29.5.0",
     "typescript": "^5.0.4"
+  },
+  "name": "daily-coding-problem",
+  "version": "0.0.0",
+  "description": "my solutions (if I do them) to the dailycodingproblem.com problems",
+  "main": "README.md",
+  "repository": "https://github.com/RuralAnemone/daily-coding-problem",
+  "author": "Isaiah W <64103005+RuralAnemone@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@jest/globals": "^29.5.0",
+    "@types/jest": "^29.5.1",
+    "babel-jest": "^29.5.0",
+    "ts-jest": "^29.1.0"
   }
 }
