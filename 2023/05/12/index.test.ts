@@ -1,5 +1,5 @@
 import 'jest'
-import countDecodings from './index.js'
+import countDecodings from './index.ts'
 
 
 describe('countDecodings()', () => {
