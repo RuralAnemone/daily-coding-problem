@@ -8,15 +8,7 @@
  * Follow-up: Can you do this in $O(N)$ time and constant space?
  */
 function largestNonAdjacentSum(array: number[]): number {
-	let largestSum: number = 0;
-	let currentSum: number = 0;
-
-	for (let i = 0; i < array.length; i++) {
-		currentSum = Math.max(currentSum, currentSum + array[i]);
-		largestSum = Math.max(largestSum, currentSum);
-	}
-
-	return largestSum;
+	return 1;
 }
 
 export { largestNonAdjacentSum };
