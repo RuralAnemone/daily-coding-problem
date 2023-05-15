@@ -1,5 +1,3 @@
-let naïveArray: number[] = [];
-
 /**
  * first naïve solution
  * very innefficient lol
@@ -13,16 +11,18 @@ let naïveArray: number[] = [];
  *    b. firstNaïveSolution(array.slice(3))
  *    c. etc
  */
-function firstNaïveSolutionPush(array: number[], initialSum: number = 0): void {
+function firstNaïveSolution(array: number[]): number {
+	let largestNonAdjacentSum = -Infinity;
+
 	if (array.length <= 2) {
-		for (const e of array) naïveArray.push(e);
+		return Math.max(...array);
 	}
 
 	for (let i = 0; i < array.length; i++) {
-		for (let j = 0; j < array.length - i; j++) firstNaïveSolutionPush(array.slice(i));
+		for (let j = 0; j < array.length - i; j++) {
+			largestNonAdjacentSum = Math.max(firstNaïveSolution(array.slice(i)));
+		}
 	}
-}
 
-function firstNaïveSolution(): number {
-	return Math.max(...naïveArray);
+	return largestNonAdjacentSum;
 }
