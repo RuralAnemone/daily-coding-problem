@@ -8,15 +8,19 @@
  * Follow-up: Can you do this in $O(N)$ time and constant space?
  */
 function largestNonAdjacentSum(array: number[]): number {
-	let largestSum: number = 0;
-	let currentSum: number = 0;
+	// adapted from https://github.com/ruppysuppy/Daily-Coding-Problem-Solutions/blob/master/Solutions/009.py
+	let included = 0;
+	let excluded = 0;
 
-	for (let i = 0; i < array.length; i++) {
-		currentSum = Math.max(currentSum, currentSum + array[i]);
-		largestSum = Math.max(largestSum, currentSum);
+	for (const number of array) {
+		[included, excluded] = [Math.max(excluded + number, number), Math.max(included, excluded)];
 	}
 
-	return largestSum;
+	return Math.max(included, excluded);
+
+	// I have a vague idea of how this works
+	// if I can figure out a way to explain it, I'll come back and add it
+	// maybe use manim (:
 }
 
 export { largestNonAdjacentSum };

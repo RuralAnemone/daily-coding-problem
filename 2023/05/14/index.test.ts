@@ -1,5 +1,5 @@
 import 'jest'
-import { largestNonAdjacentSum } from './index'
+import { largestNonAdjacentSum } from '.'
 
 describe("given tests", () => {
 	test("[2, 4, 6, 2, 5] => 13", () => {
