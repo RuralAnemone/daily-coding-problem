@@ -1,17 +1,4 @@
 /**
- * first naïve solution
- * very innefficient lol
- * from what I can tell it's O(n²) time and O(n²) space
- * 
- * 1. start from index 0
- * 2. if length <= 2
- *    a. add (both) element(s) to array
- * 3. for every element in array (save for element 0 and 1),
- *    a. firstNaïveSolution(array.slice(2))
- *    b. firstNaïveSolution(array.slice(3))
- *    c. etc
- */
-/**
  *  Given a list of integers, write a function that returns the
  * largest sum of non-adjacent numbers. Numbers can be 0 or negative.
  *
@@ -20,18 +7,20 @@
  *
  * Follow-up: Can you do this in $O(N)$ time and constant space?
  */
-function firstNaïveSolution(array: number[]): number {
-	let largestNonAdjacentSum = -Infinity;
+function largestNonAdjacentSum(array: number[]): number {
+	// adapted from https://github.com/ruppysuppy/Daily-Coding-Problem-Solutions/blob/master/Solutions/009.py
+	let included = 0;
+	let excluded = 0;
 
-	if (array.length <= 2) {
-		return Math.max(...array);
+	for (const number of array) {
+		[included, excluded] = [Math.max(excluded + number, number), Math.max(included, excluded)];
 	}
 
-	for (let i = 0; i < array.length; i++) {
-		for (let j = 0; j < array.length - i; j++) {
-			largestNonAdjacentSum = Math.max(firstNaïveSolution(array.slice(i)));
-		}
-	}
+	return Math.max(included, excluded);
 
-	return largestNonAdjacentSum;
+	// I have a vague idea of how this works
+	// if I can figure out a way to explain it, I'll come back and add it
+	// maybe use manim (:
 }
+
+export { largestNonAdjacentSum };
