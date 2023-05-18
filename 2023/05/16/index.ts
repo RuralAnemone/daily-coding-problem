@@ -13,3 +13,5 @@
 function autocomplete(s: string, set: string[]): string[] {
 	return set.filter(str => str.startsWith(s));
 }
+
+export { autocomplete };
