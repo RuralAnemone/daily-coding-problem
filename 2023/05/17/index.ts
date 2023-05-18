@@ -14,8 +14,20 @@
  * What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
  */
 function countStaircaseClimbs(n: number): number {
-	if (n < 0) return 0;
-	if (n === 0) return 1;
+	if (n <= 0) return 0;
+	if (n === 1) return 1;
 	return countStaircaseClimbs(n - 1) + countStaircaseClimbs(n - 2);
 	// holy heck this is just the fibonacci sequence!!! :)
 }
+
+function countStaircaseClimbsGivenX(n: number, x: number[]): number {
+	if (n <= 0) return 0;
+	if (n === 1) return 1;
+	let sum = 0;
+	for (const e of x) {
+		sum += countStaircaseClimbsGivenX(n - e, x);
+	}
+	return sum;
+}
+
+export { countStaircaseClimbs, countStaircaseClimbsGivenX };
