@@ -6,3 +6,9 @@ describe('given test(s)', () => {
 		expect(countStaircaseClimbs(4)).toBe(5);
 	})
 })
+
+describe('self-testing', () => {
+	test('the x test', () => {
+		expect(countStaircaseClimbsGivenX(4, [1, 3, 5])).toBe(3);
+	})
+})
