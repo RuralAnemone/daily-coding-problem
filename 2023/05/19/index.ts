@@ -17,7 +17,7 @@ function monteCarloPi(iterations: number): number {
 		}
 	}
 
-	return pointsInCircle / iterations;
+	return 4 * pointsInCircle / iterations;
 }
 
 export { monteCarloPi };
