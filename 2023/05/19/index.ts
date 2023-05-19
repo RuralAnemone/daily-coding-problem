@@ -7,7 +7,7 @@
  *
  * @link see https://www.desmos.com/calculator/slzffm0nn6
  */
-function pi(iterations: number): number {
+function monteCarloPi(iterations: number): number {
 	let pointsInCircle = 0;
 	for (let i = 0; i < iterations; i++) {
 		const x = Math.random();
@@ -19,3 +19,5 @@ function pi(iterations: number): number {
 
 	return pointsInCircle / iterations;
 }
+
+export { monteCarloPi };
