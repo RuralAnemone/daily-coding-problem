@@ -11,18 +11,16 @@ function longestSubstring(k: number, s: string): string {
 	let candidates: string[] = [];
 
 	for (let i = 0; i < s.length; i++) {
-		let diffChars: string[] = [s[i]];
-		let str: string = "";
-		for (let i = 0; diffChars.length <= k; i++) {
-			const char = s[i];
-			if (diffChars.includes(char)) {
-				str += char;
-				continue;
-			} else {
-				diffChars.push(char);
-			}
+		let distinctChars = 0;
+		let substring = "";
+
+		for (const e of s.slice(i + 1)) {
+			if (!substring.includes(e)) distinctChars++;
+			if (distinctChars > k) break;
+			substring += e;
 		}
-		candidates.push(str);
+
+		candidates.push(substring);
 	}
 
 	return candidates.sort((a, b) => b.length - a.length)[0];
