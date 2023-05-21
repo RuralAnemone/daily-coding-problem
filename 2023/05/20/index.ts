@@ -10,5 +10,6 @@ function getRandomElement<T>(stream: T[]): T {
 			randomElement = stream[i];
 		}
 	}
-	return randomElement;
+
+	return randomElement ?? stream[stream.length - 1];
 }
