@@ -19,9 +19,9 @@
  * ```
  */
 class NodeTest {
-	private val: any;
-	private left: any;
-	private right: any;
+	public val: any;
+	public left: any;
+	public right: any;
 
 	constructor(val: any, left: any, right: any) {
 		this.val = val;
@@ -48,4 +48,4 @@ function deserialize(s: string): NodeTest {
 	return new NodeTest(deserialized.val, deserialized.left, deserialized.right);
 }
 
-console.log(serialize(new NodeTest("val", "left", "right")));
+export { NodeTest, serialize, deserialize };
