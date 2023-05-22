@@ -20,7 +20,7 @@
  * 	subdir1
  *		 file1.ext
  *		 subsubdir1
- *	 subdir2
+ * 	subdir2
  *		 subsubdir2
  *			 file2.ext
  * ```
