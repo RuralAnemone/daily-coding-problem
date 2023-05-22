@@ -13,3 +13,5 @@ function getRandomElement<T>(stream: T[]): T {
 
 	return randomElement ?? stream[stream.length - 1];
 }
+
+export { getRandomElement };
