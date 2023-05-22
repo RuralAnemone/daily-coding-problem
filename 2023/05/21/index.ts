@@ -29,3 +29,5 @@ class OrderLog {
 	// bruh how do I be less efficient with time and space
 	// besides using a different language
 }
+
+export { OrderLog };
