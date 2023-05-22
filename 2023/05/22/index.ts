@@ -53,3 +53,5 @@ function longestPath(dirString: string): number {
 function countTabs(string: string): number {
 	return string.split('\t').length - 1;
 }
+
+export { longestPath };
