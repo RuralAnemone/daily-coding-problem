@@ -38,3 +38,5 @@ class XORLinkedList {
 		return this.stuff[index - 1] ^ this.stuff[index + 1];
 	}
 }
+
+export { XORLinkedList };
