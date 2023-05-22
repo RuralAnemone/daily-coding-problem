@@ -5,7 +5,7 @@
  *
  * You can modify the input array in-place.
  */
-export default function firstMissing(array: number[]): number | void {
+function firstMissing(array: number[]): number | void {
 	array = array.sort((a, b) => a - b).filter(e => e >= 0);
 	let cache = array[0];
 	for (const e of array) {
@@ -20,4 +20,4 @@ export default function firstMissing(array: number[]): number | void {
 	return cache + 1;
 }
 
-console.log(firstMissing([1, 2, 0]));
+export default firstMissing;
