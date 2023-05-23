@@ -42,8 +42,14 @@
  * The name of a directory or sub-directory will not contain a period.
  */
 
-import { NodeTest } as Tree from '../08'
+import * as mayEighth from '../08'
+const Tree = mayEighth.NodeTest
+type Tree = mayEighth.NodeTest
 
-function buildPath(dirString: string): NodeTest {
-	
+function buildPath(dirString: string): Tree {
+	return new Tree(dirString);
+}
+
+function longestPath(tree: Tree): string {
+	return tree.val;
 }
