@@ -41,17 +41,4 @@
  * 
  * The name of a directory or sub-directory will not contain a period.
  */
-function longestPath(dirString: string): number {
-	// ok so it's basically just searching for the longest string of \t that ends with \w+\.\w+
-	// hehe this feels like cheating :)
 
-	if (!dirString.includes('.')) return 0;
-	
-	return countTabs(dirString.split('\n').filter(s => s.includes('.')).sort((a, b) => countTabs(b) - countTabs(a))[0])
-}
-
-function countTabs(string: string): number {
-	return string.split('\t').length - 1;
-}
-
-export { longestPath };
