@@ -23,7 +23,7 @@ class NodeTest {
 	public left: any;
 	public right: any;
 
-	constructor(val: any, left: any, right: any) {
+	constructor(val: any, left?: NodeTest, right?: NodeTest) {
 		this.val = val;
 		this.left = left;
 		this.right = right;
