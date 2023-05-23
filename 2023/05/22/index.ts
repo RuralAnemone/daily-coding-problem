@@ -42,3 +42,8 @@
  * The name of a directory or sub-directory will not contain a period.
  */
 
+import { NodeTest } as Tree from '../08'
+
+function buildPath(dirString: string): NodeTest {
+	
+}
