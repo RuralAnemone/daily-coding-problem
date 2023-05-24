@@ -9,7 +9,7 @@
  * `8 = max(7, 8, 7)`
  * Do this in $$O(n)$$ time and $$O(k)$$ space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
  */
-function maximumValuesOfArrayGivenK(array: number[], k: number): number[] {
+function maximumValuesOfArrayGivenK(array: number[], k: number): void {
 	for (let i = 0; i++ < array.length - k;) {
 		console.log(Math.max(...array.slice(i - 1, i + k - 1)));
 		// goddammit I was going to do that
