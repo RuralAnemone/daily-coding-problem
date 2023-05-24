@@ -3,6 +3,7 @@
     "jest": "^29.5.0",
     "typescript": "^5.0.4"
   },
+  "packageManager": "yarn@3.5.1",
   "name": "daily-coding-problem",
   "version": "0.0.0",
   "description": "my solutions (if I do them) to the dailycodingproblem.com problems",
