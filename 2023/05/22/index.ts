@@ -42,6 +42,10 @@
  * The name of a directory or sub-directory will not contain a period.
  */
 
+/**
+ * some weird tree thing I improvised in like 30 seconds idk
+ * @constructor value of the node, children of the node (both are optional as you can update them later)
+ */
 class Tree {
 	#children: Tree[];
 	#value: any;
@@ -110,6 +114,9 @@ function buildPath(dirString: string): Tree {
 }
 
 /**
+ * returns the longest pathname in  given directory structure (formatted in nasty python style)
+ * 
+ * also does your mom for good measure
  * 
  * @param dirString directory string formatted in nasty python style
  * @returns the longest pathname in that directory structure
