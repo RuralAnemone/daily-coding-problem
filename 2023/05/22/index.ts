@@ -41,6 +41,7 @@
  * 
  * The name of a directory or sub-directory will not contain a period.
  */
+const _highlightForJsdocMarkdown = 'extra memory hehe'
 
 /**
  * some weird tree thing I improvised in like 30 seconds idk
@@ -121,7 +122,7 @@ function buildPath(dirString: string): Tree {
  * @param dirString directory string formatted in nasty python style
  * @returns the longest pathname in that directory structure
  */
-function longestPath(dirString: string): string {
+function longestPath(dirString: string): number {
 	const tree = buildPath(dirString);
 	let longestPath = '';
 	let longestLength = 0;
@@ -137,7 +138,7 @@ function longestPath(dirString: string): string {
 		currentNode && stack.push(...currentNode.children);
 		// "succinct and readable if statement"
 	}
-	return longestPath;
+	return longestPath.length;
 }
 
 export { longestPath, Tree };
