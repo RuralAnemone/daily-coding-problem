@@ -109,7 +109,13 @@ function buildPath(dirString: string): Tree {
 	return root;
 }
 
-function longestPath(tree: Tree): string | void {
+/**
+ * 
+ * @param dirString directory string formatted in nasty python style
+ * @returns the longest pathname in that directory structure
+ */
+function longestPath(dirString: string): string {
+	const tree = buildPath(dirString);
 	let longestPath = '';
 	let longestLength = 0;
 	const stack = [tree];
@@ -126,3 +132,5 @@ function longestPath(tree: Tree): string | void {
 	}
 	return longestPath;
 }
+
+export { longestPath, Tree };
