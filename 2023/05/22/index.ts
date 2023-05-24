@@ -77,41 +77,13 @@ class Tree {
  * rough idea:
  * - split on \n
  * - count depth via tabs
- * - if depth ever decreases, pop off stack
- * - if depth increases, push onto stack
- * 
- * yeah
- * something like that
+ * - um
  * 
  * @param dirString directory string formatted in nasty python style
  * @returns a tree representing the directory structure
  */
 function buildPath(dirString: string): Tree {
-	const dirArray = dirString.split('\n');
-	const root = new Tree(dirArray[0]);
-	const stack = [root];
-	let depth = 0;
-	for (let i = 1; i < dirArray.length; i++) {
-		const currentDir = dirArray[i];
-		const currentDepth = currentDir.split('\t').length - 1;
-		const currentNode = new Tree(currentDir);
-		// man I really want to do the recursive
-		// ugh
-		// anyways depth check
-		if (currentDepth > depth) {
-			// push onto stack
-			stack.push(currentNode);
-		} else if (currentDepth < depth) {
-			// pop off stack
-			stack.pop();
-		}
-		// add to parent
-		stack[stack.length - 1].children.push(currentNode);
-		// update depth
-		depth = currentDepth;
-	}
-
-	return root;
+	
 }
 
 /**
@@ -123,22 +95,7 @@ function buildPath(dirString: string): Tree {
  * @returns the longest pathname in that directory structure
  */
 function longestPath(dirString: string): number {
-	const tree = buildPath(dirString);
-	let longestPath = '';
-	let longestLength = 0;
-	const stack = [tree];
-	while (stack.length > 0) {
-		const currentNode = stack.pop();
-		const currentPath = currentNode?.value;
-		const currentLength = currentPath.length;
-		if (currentLength > longestLength) {
-			longestPath = currentPath;
-			longestLength = currentLength;
-		}
-		currentNode && stack.push(...currentNode.children);
-		// "succinct and readable if statement"
-	}
-	return longestPath.length;
+	
 }
 
 export { longestPath, Tree };
